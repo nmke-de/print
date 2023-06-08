@@ -8,10 +8,12 @@
 extern "C" {
 #endif
 
-void printv(const char**);
+void fdprintv(int fd, const char**);
 
 #define print(str) write(1, (str), strlen((str)))
-#define println(...) printv((const char *[]){__VA_ARGS__, "\n", NULL})
+
+#define printv(...) fdprintv(1, (const char *[]){__VA_ARGS__, NULL})
+#define println(fd, ...) fdprintv(1, (const char *[]){__VA_ARGS__, "\n", NULL})
 
 
 #ifdef __cplusplus
