@@ -13,7 +13,6 @@ void fdprintv(int fd, const char**);
 #define cargs(...) (const char *[]){__VA_ARGS__, NULL}
 
 #define print(str) write(1, (str), strlen((str)))
-
 #define printv(...) fdprintv(1, (const char *[]){__VA_ARGS__, NULL})
 #define println(...) fdprintv(1, (const char *[]){__VA_ARGS__, "\n", NULL})
 
