@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-void fdprintv(int fd, const char**);
+int fdprintv(int fd, const char**);
 
 #define cargs(...) (const char *[]){__VA_ARGS__, NULL}
 
